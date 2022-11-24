@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_test_cat_step_recipes",
+  "info": {
+    "displayName": "StepRecipe",
+    "icon": "crosshairs",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "order": {
+      "type": "integer",
+      "required": true
+    }
+  }
+}

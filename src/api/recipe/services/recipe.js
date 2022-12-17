@@ -13,4 +13,14 @@ module.exports = createCoreService('api::recipe.recipe', ({strapi}) => ({
 
     return {results, pagination};
   },
+  async create(params) {
+
+    const ctx = strapi.requestContext.get()
+    params.data.user = ctx.state.user.id
+    // some logic here
+    const result = await super.create(params);
+    // some more logic
+
+    return params;
+  }
 }));

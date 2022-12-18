@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_test_cat_ingredient_recipes",
+  "info": {
+    "displayName": "IngredientRecipe",
+    "icon": "allergies",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "ingredient": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::ingredient.ingredient"
+    },
+    "weight": {
+      "type": "decimal"
+    },
+    "weightType": {
+      "type": "enumeration",
+      "enum": [
+        "tea spoon",
+        "spoon",
+        "gram",
+        "kilogram",
+        "milliliter",
+        "liter",
+        "unit"
+      ]
+    }
+  }
+}

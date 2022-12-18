@@ -11,14 +11,6 @@
       "type": "string",
       "required": true
     },
-    "image": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
-    },
     "order": {
       "type": "integer",
       "required": true

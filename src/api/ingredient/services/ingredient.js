@@ -1,6 +1,7 @@
 'use strict';
 
 const findAllForUser = require("../../../utils/findAllForUser");
+const {FilterBuilder} = require("../../../utils/FilterBuilder");
 /**
  * ingredient service
  */
@@ -8,9 +9,19 @@ const findAllForUser = require("../../../utils/findAllForUser");
 const { createCoreService } = require('@strapi/strapi').factories;
 
 module.exports = createCoreService('api::ingredient.ingredient', ({strapi}) => ({
-  async find(...args) {
-    const {result, pagination} = await super.find(findAllForUser(strapi)(args))
-    return {result, pagination}
+  async find(params) {
+    const filters = new FilterBuilder(strapi)
+    filters
+      .authUser()
+
+    // some logic here
+    const {results, pagination} = await super.find({
+      ...params,
+      filters: filters.getFilters()
+    });
+    // some more logic
+
+    return {results, pagination};
   },
   async create(params) {
 
